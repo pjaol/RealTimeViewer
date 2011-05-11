@@ -1,0 +1,21 @@
+Real Time Viewer
+
+Is an implementation of chart2d for JMX currently
+Future extensions will include rrd query formats.
+
+Building requires Ant & Ivy
+http://ant.apache.org/ivy/history/latest-milestone/install.html
+
+Create a distribution:
+
+$ ant -f build.xml
+
+To run:
+$ ant -f build.xml run
+
+or 
+$ cd dist
+$ java -jar RealTimeViewer.jar
+
+Take a look at conf/realtimeview.properties for setting default values / short cuts 
+
