@@ -18,7 +18,7 @@
 	<property name="src.dir" value="src/java" />
 	<property name="test.src.dir" value="src/test" />
 	<property name="version" value="0.1" />
-	<property name="compile.path" value="${src.dir}:${test.src.dir}" />
+	<property name="compile.path" value="${src.dir}"/> <!--:${test.src.dir}" />-->
 	<path id="classpath">
 		<fileset dir="${ivy.lib.dir}">
 			<include name="*.jar" />
