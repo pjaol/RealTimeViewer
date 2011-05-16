@@ -61,6 +61,7 @@ public class ConfigHolder {
 				FileInputStream in = new FileInputStream(f);
 				customProperties.load(in);
 				properties.putAll(customProperties);
+				in.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -112,7 +113,7 @@ public class ConfigHolder {
 
 	private static Properties load(String propsName) throws IOException {
 		Properties props = new Properties();
-		URL url = ClassLoader.getSystemResource(propsName);
+		URL url = ConfigHolder.class.getClassLoader().getResource(propsName);
 		props.load(url.openStream());
 		return props;
 	}

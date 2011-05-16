@@ -26,6 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -36,6 +37,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
@@ -62,7 +64,7 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 
 	private JTextField host = new JTextField(10);
 	private JTextField user = new JTextField(10);
-	private JTextField password = new JTextField(10);
+	private JPasswordField password = new JPasswordField(10);
 
 	private JButton jbnGo = new JButton(ACTIONS.GO.toString());
 
@@ -79,6 +81,12 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 		wv.setSize(400, 520);
 		wv.setResizable(false);
 		wv.setTitle(APP_TITLE);
+		try {
+			Console c = new Console();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void display() {
@@ -121,11 +129,13 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 
 		jplMaster.setLayout(new GridBagLayout());
 
-		// |--------------|-----------------|
-		// | Host (0,0) | Host input (0,1)|
-		// |--------------|-----------------|----------------|
-		// | Port (1,0) | Port input (1,1)| GO Button (1,2)|
-		// |--------------|-----------------|----------------|
+		// |----------------|-----------------|
+		// | Host (0,0)     | Host input (0,1)|
+		// |----------------|-----------------|
+		// | UserName (1,0) | UserName (1,1)  |
+		// |----------------|-----------------|--------------------|
+		// | Password (2,0) | Password input (2,1)| GO Button (2,2)|
+		// |----------------|-----------------|--------------------|
 
 		// layout grid
 		// host label at 0,0
@@ -222,7 +232,7 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 		String hostName = h[0];
 		String portText = h[1];
 		String userText = user.getText();
-		String passText = password.getText();
+		String passText = new String(password.getPassword());
 		
 
 		if (hostName != null && portText != null) {

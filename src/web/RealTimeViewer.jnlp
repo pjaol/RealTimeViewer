@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: Host name needs to be specified, using my home directory -->
+<jnlp spec="1.0+" codebase="file:///Users/pjaol/Documents/workspace/RealTimeViewer/dist" href="RealTimeViewer.jnlp">
+  <information>
+    <title>Real Time Viewer</title>
+    <vendor>Patrick O'Leary</vendor>
+    <homepage href="http://www.searchsaw.com" />
+    <description>A Java Webstart test</description>
+    <offline-allowed />
+  </information>
+  <resources>
+    <j2se version="1.6+" />
+    <jar href="RealTimeViewer.jar" />
+    <jar href="lib/activation-1.1.jar"/>
+	<jar href="lib/bislider.jar"/>
+	<jar href="lib/geronimo-jms_1.1_spec-1.0.jar"/>
+	<jar href="lib/jchart2d-3.2.0.jar"/>
+	<jar href="lib/log4j-1.2.16-javadoc.jar"/>
+	<jar href="lib/log4j-1.2.16-sources.jar"/>
+	<jar href="lib/log4j-1.2.16.jar"/>
+	<jar href="lib/mail-1.4.1.jar"/>
+	<jar href="lib/xmlgraphics-commons-1.3.1.jar"/>
+  </resources>
+  <security>
+    <all-permissions />
+  </security>
+  <application-desc main-class="com.pjaol.JMX.WelcomeViewer" />
+</jnlp>
