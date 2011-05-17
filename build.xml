@@ -12,6 +12,8 @@
             JMX Real Time Viewer - grapher
     </description>
 
+	<property name="jnlp.url" value="http://realtimeviewer/"/>
+	
 	<property name="ivy.lib.dir" value="lib" />
 	<property name="build.dir" value="build" />
 	<property name="dist.dir" value="dist" />
@@ -102,7 +104,13 @@
 		<copy todir="${build.dir}">
 			<fileset dir="conf"/>
 		</copy>
+		
 		<copy todir="${dist.dir}" file="${src.dir}/../web/RealTimeViewer.jnlp" />
+		<copy tofile="${dist.dir}/dev.jnlp" file="${src.dir}/../web/RealTimeViewer.jnlp" />
+		
+		<replace file="${dist.dir}/dev.jnlp" token="@codebase@" value="file://${basedir}/${dist.dir}"/>
+		
+		<replace file="${dist.dir}/${ant.project.name}.jnlp" token="@codebase@" value="${jnlp.url}"/>
 		
 		<jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="${build.dir}">
 			<manifest>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: Host name needs to be specified, using my home directory -->
-<jnlp spec="1.0+" codebase="file:///Users/pjaol/Documents/workspace/RealTimeViewer/dist" href="RealTimeViewer.jnlp">
+<!-- TODO: Host name needs to be specified, using my home directory 
+	codebase="file:///Users/pjaol/Documents/workspace/RealTimeViewer/dist"
+	href="RealTimeViewer.jnlp"-->
+<jnlp spec="1.0+" codebase="@codebase@">
   <information>
     <title>Real Time Viewer</title>
     <vendor>Patrick O'Leary</vendor>
