@@ -74,6 +74,13 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
 	    System.setProperty("com.apple.mrj.application.apple.menu.about.name", APP_TITLE);
+	    try {
+			Console c = new Console();
+			c.setLocationRelativeTo(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WelcomeViewer wv = new WelcomeViewer();
 		wv.display();
@@ -81,12 +88,7 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 		wv.setSize(400, 520);
 		wv.setResizable(false);
 		wv.setTitle(APP_TITLE);
-		try {
-			Console c = new Console();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	}
 
 	public void display() {
@@ -239,6 +241,7 @@ public class WelcomeViewer extends JFrame implements ActionListener {
 			SelectList sl = new SelectList(hostName,
 					new Integer(portText).intValue(), userText, passText);
 			sl.draw();
+			
 		}
 	}
 

@@ -27,7 +27,7 @@ public class Console extends JFrame {
 
 		// Add a scrolling text area
 		textArea.setEditable(false);
-		textArea.setRows(50);
+		textArea.setRows(10);
 		textArea.setColumns(50);
 		getContentPane().add(new JScrollPane(textArea), BorderLayout.CENTER);
 		pack();
